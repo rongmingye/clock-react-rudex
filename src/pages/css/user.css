@@ -1,0 +1,14 @@
+.user .show span{
+	display: inline-block;
+	width: 200px;
+	height: 30px;
+	line-height: 30px;
+}
+.user .show .del-user{
+	display: none;
+	color: #f00;
+	cursor: pointer;
+}
+.del-btn{
+	cursor: pointer;
+}

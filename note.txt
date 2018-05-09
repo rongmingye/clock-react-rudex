@@ -1,0 +1,11 @@
+create-react-app
+react 
+redux 
+router
+mysql 
+express 
+socket
+css 
+
+bug
+	前端路由登陆验证，因为后台所有请求返回index.html
