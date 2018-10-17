@@ -12,7 +12,20 @@ var newUserId = null;	// 记录新用户的密码
 // app 管理 get/post
 function routesAdmin(app){
 
-		// 开门
+	// 登陆 正确则保存session
+	app.post('/login', urlencodedParser, function(req, res){
+		if( req.body.username == "f111" && req.body.pwd == "123456" ){
+			console.log("login success");
+	   		res.send("success");
+	   		res.end();		
+	   	}else {
+	   		console.log("login fail")
+	   		res.send("fail");
+	   		res.end();
+	   	}
+	});
+
+	// 开门
 	app.post('/open_post', urlencodedParser, function(req, res){
 		console.log("open success");
 		goSocket("opendoor", res);
@@ -61,7 +74,6 @@ function routesAdmin(app){
 	    });
 	});
 
-
 	// 添加用户 进入录指纹模式
 	app.post('/emode', urlencodedParser, function(req, res){
         console.log("emode");
@@ -96,7 +108,6 @@ function routesAdmin(app){
 	});
 
 }
-
 
 // 发送到net服务器
 function goSocket(odata, res){
